@@ -11,6 +11,7 @@ export const themeVariants: ThemeVariants = {
       border: 'black',
       notification: 'black',
     },
+    statusBarStyle: 'dark-content',
   },
   dark: {
     dark: true,
@@ -22,5 +23,6 @@ export const themeVariants: ThemeVariants = {
       border: 'white',
       notification: 'white',
     },
+    statusBarStyle: 'light-content',
   },
 };
