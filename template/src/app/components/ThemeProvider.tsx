@@ -1,9 +1,11 @@
-import {DefaultTheme} from '@react-navigation/native';
 import React, {FC, PropsWithChildren, useMemo} from 'react';
-import {useColorScheme} from 'react-native';
+import {StatusBar, useColorScheme} from 'react-native';
+import {themeVariants as defaultThemeVariants} from '../themes';
 import {Theme, ThemeVariants} from '../types/theme';
 
-export const ThemeContext = React.createContext<Theme>(DefaultTheme);
+export const ThemeContext = React.createContext<Theme>(
+  defaultThemeVariants.light,
+);
 
 type Props = {
   themeVariants: ThemeVariants;
@@ -21,6 +23,9 @@ export const ThemeProvider: FC<PropsWithChildren<Props>> = ({
   );
 
   return (
-    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+    <>
+      <StatusBar barStyle={theme.statusBarStyle} />
+      <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+    </>
   );
 };
