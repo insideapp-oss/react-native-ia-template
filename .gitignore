@@ -1,0 +1,6 @@
+template/android/.gradle
+template/android/app/build
+
+template/ios/build
+template/ios/Pods
+template/ios/Podfile.lock
